@@ -1,0 +1,287 @@
+/* Variables */
+:root {
+    --am-primary: #4a6bdf;
+    --am-primary-light: #7a7cff;
+    --am-secondary: #ff7e5d;
+    --am-text: #2d3748;
+    --am-text-light: #718096;
+    --am-border: #e2e8f0;
+    --am-bg: #f8fafc;
+    --am-card-bg: #ffffff;
+    --am-quote-bg: #f7f9ff;
+    --am-tag-bg: #edf2f7;
+}
+
+.dark-mode {
+    --am-primary: #7a7cff;
+    --am-secondary: #ff9d7d;
+    --am-text: #f7fafc;
+    --am-text-light: #cbd5e0;
+    --am-border: #4a5568;
+    --am-bg: #1a202c;
+    --am-card-bg: #2d3748;
+    --am-quote-bg: #2a3142;
+    --am-tag-bg: #4a5568;
+}
+
+/* Base Styles */
+.am-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    background-color: var(--am-bg);
+    margin-top: 2rem;
+}
+
+.am-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.am-title {
+    font-size: 2rem;
+    color: var(--am-primary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.am-icon {
+    font-size: 2rem;
+}
+
+.am-subtitle {
+    font-size: 1.1rem;
+    color: var(--am-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Content Layout */
+.am-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .am-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Image Section */
+.am-image-container {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.am-image-wrapper {
+    position: relative;
+    padding-top: 125%;
+    /* 4:5 aspect ratio */
+    background-color: #f0f0f0;
+}
+
+.am-doctor-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.am-image-nav {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 2;
+}
+
+.am-nav-button {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--am-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.am-nav-button:hover {
+    background-color: var(--am-primary);
+    color: white;
+}
+
+.am-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.am-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.am-dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* Details Section */
+.am-details {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.am-detail-card {
+    background: var(--am-card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.am-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.am-detail-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--am-primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.am-detail-icon {
+    font-size: 1.2rem;
+}
+
+.am-detail-text {
+    color: var(--am-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.am-detail-list {
+    margin: 0;
+    padding-left: 1.5rem;
+    color: var(--am-text);
+}
+
+.am-detail-item {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.am-specializations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.am-specialization {
+    background-color: var(--am-tag-bg);
+    color: var(--am-text);
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Quote Card */
+.am-quote-card {
+    background: var(--am-quote-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.am-quote-icon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 2rem;
+    color: var(--am-primary-light);
+    opacity: 0.2;
+}
+
+.am-quote-text {
+    font-style: italic;
+    color: var(--am-text);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+}
+
+.am-quote-author {
+    color: var(--am-text-light);
+    text-align: right;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .am-container {
+        padding: 4rem 1rem;
+    }
+
+    .am-title {
+        font-size: 2rem;
+    }
+
+    .am-detail-card {
+        padding: 1.25rem;
+    }
+
+    .am-quote-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .am-title {
+        font-size: 1.8rem;
+    }
+
+    .am-header {
+        margin-bottom: 2rem;
+    }
+
+    .am-detail-title {
+        font-size: 1.1rem;
+    }
+
+    .am-quote-text {
+        font-size: 1rem;
+    }
+}

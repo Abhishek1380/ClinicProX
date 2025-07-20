@@ -1,0 +1,368 @@
+:root {
+    --primary: #007e5f;
+    --accent: #009f7a;
+    --bg-light: #f5fff9;
+    --bg-page: #f0fdf6;
+    --radius: 20px;
+    --shadow: 0 8px 24px rgba(0, 157, 107, 0.15);
+    --transition: 0.4s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-page);
+    color: #1c1c1c;
+}
+
+/* ------------------------------
+   Carousel
+------------------------------ */
+.carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 4.5rem auto;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: #fff;
+    margin-top: 9%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* ------------------------------
+   Slide
+------------------------------ */
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, rgba(231, 255, 245, 0.8), #fff);
+}
+
+.carousel-slide:nth-child(even) {
+    flex-direction: row-reverse;
+    background: linear-gradient(135deg, rgba(204, 241, 227, 0.8), #fff);
+}
+
+/* ------------------------------
+   Slide Image
+------------------------------ */
+.slide-image {
+    flex: 1;
+    max-width: 500px;
+    aspect-ratio: 16/9;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition);
+}
+
+.slide-image:hover {
+    transform: scale(1.02);
+}
+
+.slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ------------------------------
+   Slide Content
+------------------------------ */
+.slide-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.slide-content h2 {
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.slide-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.benefits-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* ------------------------------
+   Social Icons
+------------------------------ */
+.social-links-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-btn {
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.icon-btn:hover,
+.icon-btn:focus {
+    background-color: var(--accent);
+    transform: scale(1.1);
+}
+
+/* ------------------------------
+   Arrows
+------------------------------ */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.carousel-arrow:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.carousel-arrow--prev {
+    left: 1rem;
+}
+
+.carousel-arrow--next {
+    right: 1rem;
+}
+
+/* ------------------------------
+   Dots
+------------------------------ */
+.carousel-dots {
+    text-align: center;
+    padding: 0.5rem 0;
+    background-color: var(--bg-light);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.dot.active {
+    background-color: var(--primary);
+    transform: scale(1.3);
+}
+
+blockquote span {
+    font-weight: bold;
+}
+
+/* ------------------------------
+   Testimonials Scroll
+------------------------------ */
+.testimonials-scroll {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll-inner {
+    display: flex;
+    flex-direction: column;
+    animation: scrollTestimonials 30s linear infinite;
+}
+
+.scroll-inner:hover {
+    animation-play-state: paused;
+}
+
+.scroll-inner blockquote {
+    padding: 12px 20px;
+    margin: 0 0 1rem;
+    background: #f9f9f9;
+    border-left: 4px solid #00b894;
+    font-style: italic;
+    border-radius: 6px;
+}
+
+.slide-image img {
+    margin: 0% auto !important;
+
+}
+
+@keyframes scrollTestimonials {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* ------------------------------
+   Animated Button
+------------------------------ */
+.animated-know-more-btn {
+    padding: 12px 24px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    margin-left: 12px;
+    background: linear-gradient(-45deg, #0c0606, #052522, #00b894, #0007ff);
+    background-size: 300% 300%;
+    animation: bgAnimation 3s ease infinite;
+    width: 22%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.animated-know-more-btn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes bgAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ------------------------------
+   Responsive Styles
+------------------------------ */
+@media (max-width: 768px) {
+    .carousel-slide {
+        flex-direction: column;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .carousel-slide:nth-child(even) {
+        flex-direction: column;
+        background: linear-gradient(135deg, rgba(204, 241, 227, 0.8), #fff);
+    }
+
+    .slide-image,
+    .slide-content {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .slide-image {
+        aspect-ratio: 8/3;
+    }
+
+    .slide-content h2 {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    .slide-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .carousel {
+        margin: 4rem auto;
+    }
+
+    .carousel-slide {
+        padding: 0.8rem 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .slide-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .slide-content p {
+        font-size: 0.9rem;
+        margin-bottom: 0.7rem;
+        font-weight: 500;
+    }
+
+    .benefits-list {
+        margin-bottom: 0.8rem;
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding-left: 0;
+    }
+
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon-btnn {
+        width: 10em;
+        height: 40px;
+    }
+
+
+}

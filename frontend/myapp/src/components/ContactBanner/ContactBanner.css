@@ -1,0 +1,38 @@
+.contact-banner {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    padding: 3px 0;
+    backdrop-filter: blur(8px);
+    box-shadow: none;
+    z-index: 9999;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-link {
+    color: #2a2a2a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #007B5E;
+    text-decoration: underline;
+}
+
+.contact-divider {
+    color: #555;
+}

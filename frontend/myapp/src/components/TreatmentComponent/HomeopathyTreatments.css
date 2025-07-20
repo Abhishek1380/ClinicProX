@@ -1,0 +1,415 @@
+/* ===== GLOBAL STYLES ===== */
+:root {
+    --primary-green: #2E7D32;
+    --secondary-green: #4CAF50;
+    --light-green: #8BC34A;
+    --accent-yellow: #CDDC39;
+    --dark-text: #263238;
+    --medium-text: #616161;
+    --light-text: #f5f5f5;
+    --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== COMPONENT CONTAINER ===== */
+.homeopathy-treatments {
+    padding: 5rem 2rem;
+    background: linear-gradient(160deg, #f8f9fa 0%, #e8f5e9 100%);
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.homeopathy-treatments::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%238BC34A" fill-opacity="0.1" d="M30,15 Q50,0 70,15 T90,45 Q100,70 80,80 T50,100 Q20,90 15,60 T30,15"/></svg>') no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+/* ===== HEADER SECTION ===== */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.clinic-icon {
+    font-size: 2.8rem;
+    color: var(--secondary-green);
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    transition: var(--transition-medium);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.clinic-icon:hover {
+    transform: rotate(15deg) scale(1.15);
+    color: var(--primary-green);
+}
+
+.section-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin: 0 auto 0.8rem;
+    position: relative;
+    display: inline-block;
+    line-height: 1.3;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--light-green);
+    border-radius: 4px;
+    transition: var(--transition-medium);
+}
+
+.section-header:hover .section-title::after {
+    width: 100px;
+    background: var(--accent-yellow);
+}
+
+.section-subtitle {
+    color: var(--medium-text);
+    font-size: 1.15rem;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* ===== TREATMENT GRID ===== */
+.treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.treatment-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    transition: var(--transition-medium);
+    border: none;
+    transform: translateY(0);
+}
+
+.treatment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--light-green), var(--secondary-green));
+    transition: var(--transition-medium);
+}
+
+.treatment-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(76, 175, 80, 0.2);
+}
+
+.treatment-card:hover::before {
+    height: 6px;
+    background: linear-gradient(90deg, var(--accent-yellow), var(--light-green));
+}
+
+.treatment-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+/* ===== HERB DECORATION ===== */
+.herb-decoration {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.herb-icon {
+    font-size: 2rem;
+    color: var(--light-green);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: var(--transition-medium);
+    position: relative;
+    z-index: 1;
+}
+
+.herb-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-yellow);
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.herb-particle:nth-child(1) {
+    top: -5px;
+    right: -5px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.herb-particle:nth-child(2) {
+    bottom: -8px;
+    left: -8px;
+    animation: float 3.5s ease-in-out 0.5s infinite;
+}
+
+/* ===== IMAGE CONTAINER ===== */
+.treatment-image-container {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.treatment-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-medium);
+    transform-origin: center;
+}
+
+.treatment-card:hover .treatment-image {
+    transform: scale(1.08);
+}
+
+.gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgb(0 0 0 / 62%) 10%, transparent 100%)
+}
+
+/* ===== CONTENT STYLES ===== */
+.treatment-content {
+    padding: 1.8rem;
+    position: relative;
+}
+
+.treatment-badge {
+    position: absolute;
+    top: -28px;
+    left: 25px;
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: var(--transition-medium);
+}
+
+.treatment-card:hover .treatment-badge {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.treatment-content h3 {
+    color: var(--primary-green);
+    margin: 0.8rem 0 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    transition: var(--transition-fast);
+}
+
+.treatment-card:hover .treatment-content h3 {
+    color: var(--secondary-green);
+}
+
+.treatment-content p {
+    color: var(--medium-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+    min-height: 70px;
+}
+
+/* ===== BUTTON STYLES ===== */
+.explore-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, var(--secondary-green), var(--light-green));
+    color: white;
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.25);
+    transition: var(--transition-medium);
+    border: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-button::after {
+    content: '→';
+    margin-left: 8px;
+    transition: var(--transition-fast);
+    opacity: 0.8;
+}
+
+.explore-button:hover {
+    background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.35);
+    transform: translateY(-2px);
+}
+
+.explore-button:hover::after {
+    transform: translateX(4px);
+    opacity: 1;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    25% {
+        transform: translateY(-6px) translateX(2px);
+    }
+
+    75% {
+        transform: translateY(4px) translateX(-2px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 1200px) {
+    .homeopathy-treatments {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .treatment-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .homeopathy-treatments {
+        padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.05rem;
+        max-width: 500px;
+    }
+
+    .treatment-image-container {
+        height: 180px;
+    }
+
+    .treatment-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .homeopathy-treatments {
+        padding: 2.5rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .clinic-icon {
+        font-size: 2.4rem;
+    }
+
+    .treatment-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .treatment-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .treatment-content p {
+        font-size: 0.95rem;
+        min-height: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .explore-button {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== ACCESSIBILITY FOCUS STATES ===== */
+.treatment-link:focus-visible {
+    outline: 2px dashed var(--secondary-green);
+    outline-offset: 4px;
+    border-radius: 18px;
+}
+
+.explore-button:focus-visible {
+    outline: 2px dashed white;
+    outline-offset: 2px;
+}

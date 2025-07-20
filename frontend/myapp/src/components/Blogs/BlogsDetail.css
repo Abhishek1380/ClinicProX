@@ -1,0 +1,28 @@
+.Article_container {
+    width: 70%;
+    margin: 5% auto;
+}
+
+.Article_div {
+    width: 100%;
+}
+
+.Article_title {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.Article_date {
+    display: flex;
+    justify-content: center;
+}
+
+.Article_img {
+    display: flex;
+    justify-content: center;
+
+}
+
+img {
+    width: 60%;
+    margin: 5% auto;
+}

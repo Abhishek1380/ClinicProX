@@ -1,0 +1,383 @@
+/* Base Styles */
+.chronic-diseases-page {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Hero Section */
+.disease-hero {
+    background: linear-gradient(135deg, #4a8b7e, #2c5e5e);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.disease-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    opacity: 0.1;
+}
+
+.disease-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+}
+
+.disease-hero .subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    opacity: 0.9;
+}
+
+/* Disease Tabs */
+.disease-tabs {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4a8b7e;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background-color: #4a8b7e;
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: #e0f2f1;
+}
+
+/* Disease Content Section */
+.disease-content {
+    padding: 60px 0;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-content {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.disease-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.text-content h2 {
+    font-size: 2.2rem;
+    color: #2c5e5e;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.symptoms-box,
+.approach-box {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 4px solid #4a8b7e;
+}
+
+.symptoms-box h3,
+.approach-box h3 {
+    color: #2c5e5e;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.symptoms-box ul {
+    padding-left: 20px;
+}
+
+.symptoms-box li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.symptoms-box li::before {
+    content: '•';
+    color: #4a8b7e;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.testimonials h3 {
+    color: #2c5e5e;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid #4a8b7e;
+    position: relative;
+}
+
+.quote-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 3rem;
+    color: rgba(74, 139, 126, 0.1);
+    line-height: 1;
+}
+
+.consultation-card {
+    background: linear-gradient(135deg, #4a8b7e, #3a7d72);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.consultation-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.consultation-card p {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.consult-btn {
+    background-color: white;
+    color: #4a8b7e;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.consult-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Benefits Section */
+.benefits-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.benefits-section h2 {
+    color: #2c5e5e;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #e0f2f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+}
+
+.benefit-card h3 {
+    color: #2c5e5e;
+    margin-bottom: 15px;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #3a7d72, #2c5e5e);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.primary-cta {
+    background-color: white;
+    color: #2c5e5e;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-cta {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-cta:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .disease-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .disease-hero .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        margin: 5px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .consultation-card {
+        margin-top: 30px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primary-cta,
+    .secondary-cta {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+
+.tab-content {
+    transition: all 0.5s ease;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

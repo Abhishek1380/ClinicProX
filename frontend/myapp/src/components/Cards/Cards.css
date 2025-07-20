@@ -1,0 +1,233 @@
+/* TreatmentCards.css */
+:root {
+    --trt-primary-color: #4a6fa5;
+    --trt-secondary-color: #ff7e5f;
+    --trt-text-color: #333;
+    --trt-light-text: #777;
+    --trt-white: #fff;
+    --trt-light-bg: #f8f9fa;
+    --trt-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --trt-transition: all 0.3s ease;
+}
+
+.trt-cards-section {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background-color: var(--trt-light-bg);
+    padding: 4rem 2rem;
+    color: var(--trt-text-color);
+}
+
+.trt-cards-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trt-cards-header-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--trt-primary-color);
+    font-size: 1.5rem;
+}
+
+.trt-cards-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--trt-primary-color);
+}
+
+.trt-cards-subtitle {
+    font-size: 1rem;
+    color: var(--trt-light-text);
+    font-weight: 400;
+}
+
+.trt-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trt-card {
+    perspective: 1000px;
+    cursor: pointer;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.trt-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.trt-card-flipped .trt-card-inner {
+    transform: rotateY(180deg);
+}
+
+.trt-card-front,
+.trt-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--trt-shadow);
+}
+
+.trt-card-front {
+    background-color: var(--trt-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.trt-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--trt-transition);
+}
+
+.trt-card-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+.trt-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem;
+    color: var(--trt-white);
+}
+
+.trt-card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: var(--trt-transition);
+}
+
+.trt-card-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: var(--trt-transition);
+}
+
+.trt-card:hover .trt-card-title {
+    transform: translateY(-5px);
+}
+
+.trt-card:hover .trt-card-hint {
+    transform: translateY(5px);
+}
+
+.trt-card-back {
+    background-color: var(--trt-white);
+    transform: rotateY(180deg);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.trt-card-back-content {
+    width: 100%;
+}
+
+.trt-card-back-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--trt-primary-color);
+}
+
+.trt-card-back-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--trt-text-color);
+}
+
+.trt-card-learn-more-btn {
+    background-color: var(--trt-primary-color);
+    color: var(--trt-white);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--trt-transition);
+}
+
+.trt-card-learn-more-btn:hover {
+    background-color: var(--trt-secondary-color);
+    transform: translateX(5px);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .trt-cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .trt-cards-title {
+        font-size: 1.8rem;
+    }
+
+    .trt-card {
+        height: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .trt-cards-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .trt-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trt-cards-title {
+        font-size: 1.6rem;
+    }
+
+    .trt-card {
+        height: 260px;
+    }
+
+    .trt-card-content {
+        padding: 1.2rem;
+    }
+
+    .trt-card-back {
+        padding: 1.5rem;
+    }
+}
