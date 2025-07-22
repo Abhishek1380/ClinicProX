@@ -14,7 +14,7 @@ const BlogsDetail = () => {
         // If rank is in URL, use it; otherwise, generate a random number between 1 and 3
 
         axios
-            .get(`https://backend-clinic-website.onrender.com/treatments/${treatmentRank}`)
+            .get(`https://clinicprox.onrender.com/treatments/${treatmentRank}`)
             .then((response) => {
                 setBlogsDetail(Array.isArray(response.data) ? response.data : [response.data]);
                 setLoading(false);

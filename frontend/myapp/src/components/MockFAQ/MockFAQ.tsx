@@ -15,7 +15,7 @@ const MockFAQ: React.FC = () => {
 
     useEffect(() => {
         axios
-            .get<FAQ[]>("https://backend-clinic-website.onrender.com/FAQ1")
+            .get<FAQ[]>("https://clinicprox.onrender.com/FAQ1")
             .then((response) => {
                 setFaqList(response.data);
                 setError(null);

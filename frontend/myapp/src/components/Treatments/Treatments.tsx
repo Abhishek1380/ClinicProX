@@ -16,7 +16,7 @@ const Treatments: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        axios.get<Treatment[]>('https://backend-clinic-website.onrender.com/treatments')
+        axios.get<Treatment[]>('https://clinicprox.onrender.com/treatments')
             .then(response => {
                 setTreatments(response.data);
                 setLoading(false);

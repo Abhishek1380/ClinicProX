@@ -16,7 +16,7 @@ const BlogDetail = () => {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const response = await axios.get(`https://backend-clinic-website.onrender.com/blog/${slug}`);
+                const response = await axios.get(`https://clinicprox.onrender.com/blog/${slug}`);
                 const data = response.data;
                 const extractedBlog = {
                     title: data.blog_detail_title,

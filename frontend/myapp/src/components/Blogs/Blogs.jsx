@@ -9,7 +9,7 @@ const Blogs = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get("https://backend-clinic-website.onrender.com/blogs")
+        axios.get("https://clinicprox.onrender.com/blogs")
             .then(response => {
                 setBlogs(response.data);
                 setLoading(false);

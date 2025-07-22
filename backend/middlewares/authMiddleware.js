@@ -3,9 +3,8 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const JWT_SECRET = process.env.JWT_SECRET; // Move to .env for production
+const JWT_SECRET = process.env.JWT_SECRET;
 
-// Check JWT Token
 const verifyToken = (req, res, next) => {
     const authHeader = req.headers.authorization;
 
@@ -17,14 +16,13 @@ const verifyToken = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
-        req.user = decoded; // { id, role }
+        req.user = decoded;
         next();
     } catch (err) {
         return res.status(401).json({ error: 'Unauthorized: Invalid token' });
     }
 };
 
-// Optional: Attach full user document
 const getUser = async (req, res, next) => {
     try {
         const user = await User.findById(req.user.id).select('-password');
@@ -36,7 +34,6 @@ const getUser = async (req, res, next) => {
     }
 };
 
-// Admin check
 const isAdmin = (req, res, next) => {
     if (req.user.role !== 'admin') {
         return res.status(403).json({ error: 'Forbidden: Admins only' });

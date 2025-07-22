@@ -15,7 +15,7 @@ const Review: React.FC = () => {
 
     useEffect(() => {
         axios
-            .get("https://backend-clinic-website.onrender.com/reviews")
+            .get("https://clinicprox.onrender.com/reviews")
             .then((response) => {
                 setReviews(response.data);
             })

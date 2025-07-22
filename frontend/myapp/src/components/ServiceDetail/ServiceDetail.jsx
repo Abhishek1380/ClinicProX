@@ -13,7 +13,7 @@ const ServiceDetail = () => {
         const fetchService = async () => {
             try {
                 const response = await axios.get(
-                    `https://backend-clinic-website.onrender.com/service/${encodeURIComponent(title)}`
+                    `https://clinicprox.onrender.com/service/${encodeURIComponent(title)}`
                 );
                 setDisease(response.data);
             } catch (error) {

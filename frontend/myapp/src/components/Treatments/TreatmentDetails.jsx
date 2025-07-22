@@ -13,7 +13,7 @@ const TreatmentDetails = () => {
     useEffect(() => {
         const fetchTreatment = async () => {
             try {
-                const response = await axios.get(`https://backend-clinic-website.onrender.com/treatments/${id}`);
+                const response = await axios.get(`https://clinicprox.onrender.com/treatments/${id}`);
                 setTreatment(response.data[0]);
             } catch (err) {
                 setError(err.message);
