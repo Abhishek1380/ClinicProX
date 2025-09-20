@@ -1,6 +1,6 @@
 # ClinicProX
 
-**ClinicProX** is a full-stack clinic management system built using the **MERN stack** and **TypeScript**, designed for real-world clinical workflows. It features secure authentication, role-based access control, and a scalable, modular backend architecture supporting both users and administrators.
+**ClinicProX** is a full-stack clinic managementt system built using the **MERN stack** and **TypeScript**, designed for real-world clinical workflows. It features secure authentication, role-based access control, and a scalable, modular backend architecture supporting both users and administrators.
 
 > This is a production-level upgrade of a real-time clinic project, redesigned for better code organization, maintainability, and performance.
 
